@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ClientLayout from "../components/client-layout";
+import ClientLayout from "@/components/client-layout";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,7 +49,7 @@ const Home = () => {
       scale: 0.5,
       borderRadius: "300px",
       opacity: 0,
-      x: "60%",
+      x: "20%",
       scrollTrigger: {
         trigger: hero,
         scrub: 1,
@@ -80,11 +80,11 @@ const Home = () => {
           <div className="class_flex-box flex">
             <section
               ref={heroRef}
-              className="class_hero w-[100vw] h-[100vh] relative bg-gray-500"
+              className="class_hero min-w-[100vw] w-[100vw] h-[100vh] relative"
             >
               <video
                 ref={videoRef}
-                className="absolute top-1/2 left-1/2 w-full h-full object-cover transform -translate-x-1/2 -translate-y-1/2"
+                className="pointer-events-none absolute top-1/2 left-1/2 w-full h-full object-cover transform -translate-x-1/2 -translate-y-1/2"
                 autoPlay
                 loop
                 muted
@@ -92,22 +92,29 @@ const Home = () => {
                 <source src="/videos/hero_video.mp4" type="video/mp4" />
               </video>
             </section>
-            <section className="class_introduction w-[100vw] h-[100vh] bg-[#3c3c3c]">
+            <section className="class_introduction w-fit h-[100vh] flex">
               <div className="class__about-area">
                 <h2 className="font-abril text-[#BD6060] text-[300px]">
                   ABOUT
                 </h2>
-                <h3>Hosokawa Ryusei</h3>
-                <p>
-                  1999年に北海道札幌市で生まれ育ち製菓の専門学校を卒業後、
-                  <br />
-                  フレンチレストランでパティシエとしてスキルを身につける。
-                </p>
-                <p>
-                  一人前に仕事を出来るようになり新しいことに挑戦したいと思い、
-                  <br />
-                  以前から興味のあったIT業界に入るため職業訓練校に入りWEBフロントエンドの勉強をし現在に至ります。
-                </p>
+                <div className="flex gap-[10px]">
+                  <h3 className="text-[14px] font-[600] text-[#BD6060]">私について</h3>
+                  <div className="w-full max-w-[225px]">
+                    <h4 className="text-[18px] mt-[-5px] mb-[5px]">Hosokawa Ryusei</h4>
+                    <p className="text-[14px]">
+                      <span>
+                        1999年に北海道札幌市で生まれ育ち製菓の専門学校を卒業後、
+                        <br />
+                        フレンチレストランでパティシエとしてスキルを身につける。
+                      </span>
+                      <span>
+                        一人前に仕事を出来るようになり新しいことに挑戦したいと思い、
+                        <br />
+                        以前から興味のあったIT業界に入るため職業訓練校に入りWEBフロントエンドの勉強をし現在に至ります。
+                      </span>
+                    </p>
+                  </div>
+                </div>
               </div>
               <div className="class__interest-area">
                 <h2 className="font-abril text-[#BD6060] text-[300px]">
@@ -124,7 +131,7 @@ const Home = () => {
               </div>
             </section>
           </div>
-          <section className="class_portfolios w-[100vw] h-[100vh] bg-[#272727]">
+          <section className="class_portfolios w-[100vw] h-[100vh] bg-[#F9FAF5]">
             <div className="class__description-area">
               <h2 className="font-abril text-[#BD6060] text-[300px]">
                 PORTFOLIO
@@ -140,10 +147,10 @@ const Home = () => {
               </p>
             </div>
           </section>
-          <section className="class_portfolios w-[100vw] h-[100vh] bg-[#1f1f1f]"></section>
+          <section className="class_portfolios w-[100vw] h-[100vh] bg-[#F9FAF5]"></section>
         </div>
       </main>
-      <footer className="w-[100vw] h-[100vh] bg-[#040404]"></footer>
+      <footer className="w-[100vw] h-[100vh] bg-[#F9FAF5]"></footer>
     </>
   );
 };

@@ -20,6 +20,7 @@ const ClientLayout = ({ children }: { children: React.ReactNode }) => {
       scale: 0.4,
       x: "-50%",
       y: "-51%",
+      ease: "power1.inOut", 
       scrollTrigger: {
         trigger: name,
         scrub: 1,
@@ -32,7 +33,7 @@ const ClientLayout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <>
-      <header className="w-full h-full fixed top-0 left-0 z-50">
+      <div className="pointer-events-none w-full h-full fixed top-0 left-0 z-50">
         <div ref={nameRef} className="w-[1400px] h-[800px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <Image
             width={200}
@@ -42,20 +43,7 @@ const ClientLayout = ({ children }: { children: React.ReactNode }) => {
             className="class_name-img w-full h-full object-fit-contain"
           />
         </div>
-        <nav>
-          <ul>
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/about">About</a>
-            </li>
-            <li>
-              <a href="/portfolio">Portfolio</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      </div>
       {children}
     </>
   );

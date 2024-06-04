@@ -1,22 +1,5 @@
 import type { Config } from "tailwindcss"
 
-module.exports = {
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
-    './app/**/*.{js,ts,jsx,tsx}',
-  ],
-  theme: {
-    extend: {
-      fontFamily: {
-        shippori: ['ShipporiMinchoB1', 'serif'],
-        abril: ['AbrilFatface', 'serif'],
-      },
-    },
-  },
-  plugins: [],
-};
-
 const config = {
   darkMode: ["class"],
   content: [
@@ -35,6 +18,10 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        shippori: ['ShipporiMinchoB1', 'serif'],
+        abril: ['AbrilFatface', 'serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
